@@ -43,7 +43,7 @@ async def ping(ctx):
 
 @bot.command()
 async def deploy(ctx):
-    if userNotAllowed(ctx):
+    if await userNotAllowed(ctx):
         return
 
     await ctx.send('Starting deploy')
@@ -52,7 +52,7 @@ async def deploy(ctx):
 
 @bot.command(name='qa-start')
 async def qa_start(ctx):
-    if userNotAllowed(ctx):
+    if await userNotAllowed(ctx):
         return
 
     await ctx.send('Starting deploy to QA')
@@ -61,7 +61,7 @@ async def qa_start(ctx):
 
 @bot.command(name='qa-stop')
 async def qa_stop(ctx):
-    if userNotAllowed(ctx):
+    if await userNotAllowed(ctx):
         return
 
     await ctx.send('Stopping QA server')
@@ -70,7 +70,7 @@ async def qa_stop(ctx):
 
 @bot.command(name='qa-restart')
 async def qa_restart(ctx):
-    if userNotAllowed(ctx):
+    if await userNotAllowed(ctx):
         return
 
     await qa_stop(ctx)
@@ -78,7 +78,7 @@ async def qa_restart(ctx):
 
 @bot.command(name='qa-deploy')
 async def qa_deploy(ctx):
-    if userNotAllowed(ctx):
+    if await userNotAllowed(ctx):
         return
 
     await ctx.send('Starting deploy to QA from Discord')
