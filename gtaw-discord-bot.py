@@ -59,7 +59,6 @@ async def qa_start(ctx):
     result = subprocess.check_output(['bash', '-c', f'ssh -i {GTAW_SSH_KEY_PATH} {GTAW_SSH_USER}@{GTAW_SSH_HOST} ./start-ragemp.sh'])
     await ctx.send('Result: ' + result.decode('utf-8'))
 
-
 @bot.command(name='qa-stop')
 async def qa_stop(ctx):
     if userNotAllowed(ctx):
@@ -68,6 +67,14 @@ async def qa_stop(ctx):
     await ctx.send('Stopping QA server')
     result = subprocess.check_output(['bash', '-c', f'ssh -i {GTAW_SSH_KEY_PATH} {GTAW_SSH_USER}@{GTAW_SSH_HOST} ./stop-ragemp.sh'])
     await ctx.send('Result: ' + result.decode('utf-8'))
+
+@bot.command(name='qa-restart')
+async def qa_restart(ctx):
+    if userNotAllowed(ctx):
+        return
+
+    await qa_stop(ctx)
+    await qa_start(ctx)
 
 @bot.command(name='qa-deploy')
 async def qa_deploy(ctx):
