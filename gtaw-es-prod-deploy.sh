@@ -57,7 +57,7 @@ trap 'handle_error $?' ERR
 send_discord_message "Starting CRON job"
 
 set_last_known_phase "Fetching from GitHub"
-cd "$GTAW_REPO_DIR"
+cd "$GTAW_LOCAL_REPO_DIR"
 git fetch origin
 git checkout Spain
 
