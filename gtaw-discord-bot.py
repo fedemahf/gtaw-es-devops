@@ -21,7 +21,8 @@ bot = commands.Bot(command_prefix='$', intents=intents)
 allowedUsers = [
     919790456492159046,
     458417449457680435,
-    900119403268542565
+    900119403268542565,
+    134680883318751234
 ]
 
 SCRIPT_DIR=os.path.realpath(os.path.dirname(__file__))
