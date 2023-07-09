@@ -86,4 +86,13 @@ async def qa_deploy(ctx):
     subprocess.check_output(['bash', '-c', f'{SCRIPT_DIR}/gtaw-es-qa-deploy.sh'])
     await ctx.send('Deploy to QA from Discord done')
 
+@bot.command(name='docker-prune')
+async def docker_prune(ctx):
+    if await userNotAllowed(ctx):
+        return
+
+    await ctx.send('Running `docker system prune -f`')
+    result = subprocess.check_output(['bash', '-c', 'docker system prune -f'])
+    await ctx.send('Result: ' + result.decode('utf-8'))
+
 bot.run(DISCORD_TOKEN)
