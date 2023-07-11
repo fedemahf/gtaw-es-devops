@@ -28,7 +28,7 @@ send_discord_message() {
 	payload+="$message"
 	payload+='","tts":false,"flags":0}'
 	echo "send_discord_message: $message"	
-	curl 'https://discord.com/api/v9/channels/1030877056378093598/messages' \
+	curl 'https://discord.com/api/v9/channels/1119770467801251920/messages' \
 		-H "$DISCORD_BOT_AUTHORIZATION" \
 		-H 'content-type: application/json' \
 		--data-raw "$payload" \
