@@ -28,7 +28,7 @@ allowedUsers = [
 ]
 
 SCRIPT_DIR=os.path.realpath(os.path.dirname(__file__))
-ERROR_USER_NOT_ALLOWED = 'You are not allowed to use this bot. Contact Lateralus#4351 for more info.'
+ERROR_USER_NOT_ALLOWED = 'You are not allowed to use this bot. Contact `obituar.y` for more info.'
 
 async def userNotAllowed(ctx):
     if ctx.message.author.id not in allowedUsers:
