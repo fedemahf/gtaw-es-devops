@@ -19,10 +19,12 @@ intents.message_content = True
 bot = commands.Bot(command_prefix='$', intents=intents)
 
 allowedUsers = [
-    919790456492159046,
-    458417449457680435,
-    900119403268542565,
-    134680883318751234
+    919790456492159046, # Obituary
+    458417449457680435, # empty
+    900119403268542565, # Sweetvon
+    134680883318751234, # Livamyrd
+    348711124239253509, # Benyi
+    140601452513984513, # Dhraax
 ]
 
 SCRIPT_DIR=os.path.realpath(os.path.dirname(__file__))
